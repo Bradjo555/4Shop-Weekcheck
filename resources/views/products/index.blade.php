@@ -3,6 +3,11 @@
 @section('content')
 
 	<div class="products">
+		<ul>
+			@foreach($products as $category)
+				<li><a href="{{ url('categories/' . $category->id) }}">{{ $category->title }}</a></li>
+			@endforeach
+		</ul>
 		@foreach($products as $product)
 			<a class="product-row no-link" href="{{ route('products.show', $product) }}">
 				<img src="{{ url($product->image ?? 'img/placeholder.jpg') }}" alt="{{ $product->title }}" class="rounded">

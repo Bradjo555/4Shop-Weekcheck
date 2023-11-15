@@ -63,3 +63,7 @@ Route::view('/login', 'auth.login')->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+use App\Http\Controllers\CategoryController;
+
+Route::get('/categories/{id}', [CategoryController::class, 'show']);
